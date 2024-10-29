@@ -374,6 +374,15 @@ func (o *Channel) Sanitize() Channel {
 	}
 }
 
+func (o *Channel) Sanitize() Channel {
+	return Channel{
+		Id:          o.Id,
+		TeamId:      o.TeamId,
+		Type:        o.Type,
+		DisplayName: o.DisplayName,
+	}
+}
+
 func (t ChannelType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(string(t))
 }
